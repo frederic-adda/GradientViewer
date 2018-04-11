@@ -13,35 +13,46 @@ import RxSwiftExt
 
 class ViewController: UIViewController {
 
-    // MARK: - Model
+    // MARK: - Properties
+    
+    // Model
     var gradientStart = Variable<CGPoint>(CGPoint.zero)
     var gradientEnd = Variable<CGPoint>(CGPoint(x: 1, y: 0))
     
+    // Private properties
     private var bag = DisposeBag()
 
+    // IBOutlets
+    @IBOutlet private weak var gradientView: GradientView!
     
-    // MARK: - IBOutlets
-    @IBOutlet weak var gradientView: GradientView!
+    @IBOutlet private weak var startXLabel: UILabel!
+    @IBOutlet private weak var startXStepper: UIStepper!
+    @IBOutlet private weak var startYLabel: UILabel!
+    @IBOutlet private weak var startYStepper: UIStepper!
+    @IBOutlet private weak var endXLabel: UILabel!
+    @IBOutlet private weak var endXStepper: UIStepper!
+    @IBOutlet private weak var endYLabel: UILabel!
+    @IBOutlet private weak var endYStepper: UIStepper!
     
-    @IBOutlet weak var startXLabel: UILabel!
-    @IBOutlet weak var startXStepper: UIStepper!
-    @IBOutlet weak var startYLabel: UILabel!
-    @IBOutlet weak var startYStepper: UIStepper!
-    @IBOutlet weak var endXLabel: UILabel!
-    @IBOutlet weak var endXStepper: UIStepper!
-    @IBOutlet weak var endYLabel: UILabel!
-    @IBOutlet weak var endYStepper: UIStepper!
-    
-    @IBOutlet weak var startColorTextField: UITextField!
-    @IBOutlet weak var startColorSampleView: UIView!
-    @IBOutlet weak var endColorTextField: UITextField!
-    @IBOutlet weak var endColorSampleView: UIView!
+    @IBOutlet private weak var startColorTextField: UITextField!
+    @IBOutlet private weak var startColorSampleView: UIView!
+    @IBOutlet private weak var endColorTextField: UITextField!
+    @IBOutlet private weak var endColorSampleView: UIView!
     
     
     // MARK: - View controller life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Bindings
+        bindGradientModel()
+        bindSteppers()
+        bindTextFields()
+    }
+    
+    
+    // MARK: - Custom functions
+    private func bindGradientModel() {
         gradientStart.asObservable()
             .subscribe(onNext: { (gradientStart) in
                 self.gradientView.startPoint = gradientStart
@@ -50,7 +61,7 @@ class ViewController: UIViewController {
                 self.startXStepper.value = Double(gradientStart.x)
                 self.startYStepper.value = Double(gradientStart.y)
             })
-        .disposed(by: bag)
+            .disposed(by: bag)
         
         gradientEnd.asObservable()
             .subscribe(onNext: { (gradientEnd) in
@@ -60,9 +71,11 @@ class ViewController: UIViewController {
                 self.endXStepper.value = Double(gradientEnd.x)
                 self.endYStepper.value = Double(gradientEnd.y)
             })
-        .disposed(by: bag)
-        
-       
+            .disposed(by: bag)
+    }
+    
+    
+    private func bindSteppers() {
         startXStepper.rx.value
             .map { CGFloat($0) }
             .asDriver(onErrorJustReturn: 0)
@@ -94,7 +107,10 @@ class ViewController: UIViewController {
                 self.gradientEnd.value.y = yValue
             })
             .disposed(by: bag)
-        
+    }
+    
+    
+    private func bindTextFields() {
         startColorTextField.rx.text
             .unwrap()
             .map { UIColor(hexString: $0) }

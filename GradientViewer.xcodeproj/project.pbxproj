@@ -63,6 +63,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B65B9EB7207EAEC80045987C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B65B9EB5207EA96E0045987C /* UIColor extension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		B6C277E7207DC41600A742FE = {
 			isa = PBXGroup;
 			children = (
@@ -85,8 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				B6C277F7207DC41600A742FE /* Main.storyboard */,
-				B65B9EB5207EA96E0045987C /* UIColor extension.swift */,
 				B6C277F5207DC41600A742FE /* ViewController.swift */,
+				B65B9EB7207EAEC80045987C /* Extensions */,
 				B6C2780A207DE76C00A742FE /* Gradients */,
 				B6C27809207DE75F00A742FE /* Supporting files */,
 			);
@@ -397,7 +405,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K99V93H2NC;
 				INFOPLIST_FILE = GradientViewer/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = fr.novaera.GradientViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -413,7 +424,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K99V93H2NC;
 				INFOPLIST_FILE = GradientViewer/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = fr.novaera.GradientViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
