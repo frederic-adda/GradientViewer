@@ -17,11 +17,12 @@ class ViewController: UIViewController {
     
     // Model
     var gradientStart = Variable<CGPoint>(CGPoint.zero)
-    var gradientEnd = Variable<CGPoint>(CGPoint(x: 1, y: 0))
+    var gradientEnd = Variable<CGPoint>(CGPoint(x: 0, y: 1))
     
     // Private properties
     private var bag = DisposeBag()
-
+    private var arrowLayer = CAShapeLayer()
+    
     // IBOutlets
     @IBOutlet private weak var gradientView: GradientView!
     
@@ -39,6 +40,16 @@ class ViewController: UIViewController {
     @IBOutlet private weak var endColorTextField: UITextField!
     @IBOutlet private weak var endColorSampleView: UIView!
     
+    @IBOutlet private weak var startMarker: UILabel!
+    @IBOutlet private weak var endMarker: UILabel!
+    
+    // NSLayoutConstraints
+    @IBOutlet private weak var startMarkerXConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var startMarkerYConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var endMarkerXConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var endMarkerYConstraint: NSLayoutConstraint!
+    
+    
     
     // MARK: - View controller life cycle
     override func viewDidLoad() {
@@ -51,25 +62,42 @@ class ViewController: UIViewController {
     }
     
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        startMarker.makeRound()
+        endMarker.makeRound()
+        adjustGradientVector()
+    }
+    
+    
     // MARK: - Custom functions
     private func bindGradientModel() {
         gradientStart.asObservable()
             .subscribe(onNext: { (gradientStart) in
+                print("GradientStart changed: \(gradientStart)")
+                    
                 self.gradientView.startPoint = gradientStart
                 self.startXLabel.text = "x: \(gradientStart.x)"
                 self.startYLabel.text = "y: \(gradientStart.y)"
                 self.startXStepper.value = Double(gradientStart.x)
                 self.startYStepper.value = Double(gradientStart.y)
+                
+                self.adjustStartMarkerPosition(with: gradientStart)
             })
             .disposed(by: bag)
         
         gradientEnd.asObservable()
             .subscribe(onNext: { (gradientEnd) in
+                print("GradientEnd changed: \(gradientEnd)")
+                    
                 self.gradientView.endPoint = gradientEnd
                 self.endXLabel.text = "x: \(gradientEnd.x)"
                 self.endYLabel.text = "y: \(gradientEnd.y)"
                 self.endXStepper.value = Double(gradientEnd.x)
                 self.endYStepper.value = Double(gradientEnd.y)
+                
+                self.adjustEndMarkerPosition(with: gradientEnd)
             })
             .disposed(by: bag)
     }
@@ -128,6 +156,47 @@ class ViewController: UIViewController {
                 self.endColorSampleView.backgroundColor = color
             })
             .disposed(by: bag)
+    }
+    
+    
+    private func adjustStartMarkerPosition(with gradientStart: CGPoint) {
+        print("Start marker - new x: \(gradientView.bounds.width * gradientStart.x)")
+        print("Start marker - new Y: \(gradientView.bounds.height * gradientStart.y)")
+
+        startMarkerXConstraint.constant = gradientView.bounds.width * gradientStart.x
+        startMarkerYConstraint.constant = gradientView.bounds.height * gradientStart.y
+        gradientView.layoutIfNeeded()
+        
+        adjustGradientVector()
+    }
+    
+    
+    private func adjustEndMarkerPosition(with gradientEnd: CGPoint) {
+        endMarkerXConstraint.constant = gradientView.bounds.width * gradientEnd.x
+        endMarkerYConstraint.constant = gradientView.bounds.height * gradientEnd.y
+        gradientView.layoutIfNeeded()
+        
+        adjustGradientVector()
+    }
+    
+    
+    // The gradient vector is an arrow going from the startMarker to the endMarker
+    private func adjustGradientVector() {
+        
+        print("StartMarker center: \(startMarker.center)")
+        print("EndMarker center: \(endMarker.center)")
+
+        arrowLayer.removeFromSuperlayer()
+        
+        let arrowPath = UIBezierPath()
+        arrowPath.move(to: startMarker.center)
+        arrowPath.addLine(to: endMarker.center)
+
+        arrowLayer.path = arrowPath.cgPath
+        arrowLayer.lineWidth = 1
+        arrowLayer.strokeColor = UIColor.darkGray.cgColor
+        
+        self.gradientView.layer.insertSublayer(arrowLayer, below: startMarker.layer)
     }
 }
 

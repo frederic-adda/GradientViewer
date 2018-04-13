@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,10 +21,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86N-U4-dNE" customClass="GradientView" customModule="GradientViewer" customModuleProvider="target">
-                                <rect key="frame" x="10" y="50" width="355" height="355"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="20" y="50" width="335" height="335"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgn-cp-xld">
+                                        <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.75136451198630139" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="6Jn-6n-MmC"/>
+                                            <constraint firstAttribute="width" secondItem="Lgn-cp-xld" secondAttribute="height" multiplier="1:1" id="oK0-mx-50B"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfb-uW-xxB">
+                                        <rect key="frame" x="-10" y="325" width="20" height="20"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.75136451199999998" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Mfb-uW-xxB" secondAttribute="height" multiplier="1:1" id="FzN-C6-EsY"/>
+                                            <constraint firstAttribute="height" constant="20" id="NxH-eh-B8J"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="Mfb-uW-xxB" firstAttribute="centerY" secondItem="86N-U4-dNE" secondAttribute="top" constant="335" id="CWg-fb-WAf"/>
+                                    <constraint firstItem="Mfb-uW-xxB" firstAttribute="centerX" secondItem="86N-U4-dNE" secondAttribute="leading" id="JN0-HF-Awt"/>
+                                    <constraint firstItem="Lgn-cp-xld" firstAttribute="centerY" secondItem="86N-U4-dNE" secondAttribute="top" id="bpT-C6-lfy"/>
                                     <constraint firstAttribute="width" secondItem="86N-U4-dNE" secondAttribute="height" multiplier="1:1" id="eRR-g1-SYR"/>
+                                    <constraint firstItem="Lgn-cp-xld" firstAttribute="centerX" secondItem="86N-U4-dNE" secondAttribute="leading" id="zdQ-fW-Vpb"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="startColor">
@@ -186,11 +215,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="86N-U4-dNE" secondAttribute="trailing" constant="10" id="I7h-BS-jHf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="86N-U4-dNE" secondAttribute="trailing" constant="20" id="I7h-BS-jHf"/>
                             <constraint firstItem="86N-U4-dNE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="K6e-Ai-aJZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="T9s-8g-shK" secondAttribute="bottom" constant="20" id="Zdj-8b-URp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="T9s-8g-shK" secondAttribute="trailing" constant="10" id="eL1-Ta-dtd"/>
-                            <constraint firstItem="86N-U4-dNE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="iRE-aT-ODW"/>
+                            <constraint firstItem="86N-U4-dNE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="iRE-aT-ODW"/>
                             <constraint firstItem="T9s-8g-shK" firstAttribute="top" relation="greaterThanOrEqual" secondItem="86N-U4-dNE" secondAttribute="bottom" constant="30" id="oml-bK-TE9"/>
                             <constraint firstItem="T9s-8g-shK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="quo-ta-78h"/>
                             <constraint firstItem="86N-U4-dNE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wTQ-qd-8Cb"/>
@@ -200,6 +229,9 @@
                     <connections>
                         <outlet property="endColorSampleView" destination="yC9-iC-Os5" id="LwA-m3-QcU"/>
                         <outlet property="endColorTextField" destination="aBR-BQ-qNV" id="Rvk-HJ-6iA"/>
+                        <outlet property="endMarker" destination="Mfb-uW-xxB" id="xGf-TU-sdb"/>
+                        <outlet property="endMarkerXConstraint" destination="JN0-HF-Awt" id="RSb-eG-b2m"/>
+                        <outlet property="endMarkerYConstraint" destination="CWg-fb-WAf" id="a96-Fb-UNZ"/>
                         <outlet property="endXLabel" destination="3S3-uG-FZu" id="iy4-n6-30A"/>
                         <outlet property="endXStepper" destination="TqF-r2-u5A" id="4p8-V6-DhB"/>
                         <outlet property="endYLabel" destination="w8R-zA-g2p" id="Ngh-st-Jgy"/>
@@ -207,6 +239,9 @@
                         <outlet property="gradientView" destination="86N-U4-dNE" id="c4H-Bv-jc7"/>
                         <outlet property="startColorSampleView" destination="ftX-DM-p1d" id="Zno-oy-Adh"/>
                         <outlet property="startColorTextField" destination="yhf-e2-CaI" id="Dz8-VT-vKd"/>
+                        <outlet property="startMarker" destination="Lgn-cp-xld" id="Rff-un-YSz"/>
+                        <outlet property="startMarkerXConstraint" destination="zdQ-fW-Vpb" id="XFp-IN-QP8"/>
+                        <outlet property="startMarkerYConstraint" destination="bpT-C6-lfy" id="C6d-D0-gJ6"/>
                         <outlet property="startXLabel" destination="XWK-HQ-d9B" id="hbu-5g-Wn6"/>
                         <outlet property="startXStepper" destination="l9g-ix-me7" id="n2O-ho-ghp"/>
                         <outlet property="startYLabel" destination="IYS-el-Bh6" id="qdT-9V-jem"/>
