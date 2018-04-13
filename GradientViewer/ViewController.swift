@@ -75,8 +75,6 @@ class ViewController: UIViewController {
     private func bindGradientModel() {
         gradientStart.asObservable()
             .subscribe(onNext: { (gradientStart) in
-                print("GradientStart changed: \(gradientStart)")
-                    
                 self.gradientView.startPoint = gradientStart
                 self.startXLabel.text = "x: \(gradientStart.x)"
                 self.startYLabel.text = "y: \(gradientStart.y)"
@@ -89,8 +87,6 @@ class ViewController: UIViewController {
         
         gradientEnd.asObservable()
             .subscribe(onNext: { (gradientEnd) in
-                print("GradientEnd changed: \(gradientEnd)")
-                    
                 self.gradientView.endPoint = gradientEnd
                 self.endXLabel.text = "x: \(gradientEnd.x)"
                 self.endYLabel.text = "y: \(gradientEnd.y)"
@@ -160,9 +156,6 @@ class ViewController: UIViewController {
     
     
     private func adjustStartMarkerPosition(with gradientStart: CGPoint) {
-        print("Start marker - new x: \(gradientView.bounds.width * gradientStart.x)")
-        print("Start marker - new Y: \(gradientView.bounds.height * gradientStart.y)")
-
         startMarkerXConstraint.constant = gradientView.bounds.width * gradientStart.x
         startMarkerYConstraint.constant = gradientView.bounds.height * gradientStart.y
         gradientView.layoutIfNeeded()
@@ -182,10 +175,6 @@ class ViewController: UIViewController {
     
     // The gradient vector is an arrow going from the startMarker to the endMarker
     private func adjustGradientVector() {
-        
-        print("StartMarker center: \(startMarker.center)")
-        print("EndMarker center: \(endMarker.center)")
-
         arrowLayer.removeFromSuperlayer()
         
         let arrowPath = UIBezierPath()
