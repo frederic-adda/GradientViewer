@@ -43,6 +43,8 @@ class GradientViewController: InputViewController {
     @IBOutlet private weak var startMarker: UILabel!
     @IBOutlet private weak var endMarker: UILabel!
     
+    @IBOutlet private weak var showMarkersSwitch: UISwitch!
+    
     // NSLayoutConstraints
     @IBOutlet private weak var startMarkerXConstraint: NSLayoutConstraint!
     @IBOutlet private weak var startMarkerYConstraint: NSLayoutConstraint!
@@ -59,6 +61,7 @@ class GradientViewController: InputViewController {
         bindGradientModel()
         bindSteppers()
         bindTextFields()
+        bindSwitches()
     }
     
     
@@ -156,16 +159,30 @@ class GradientViewController: InputViewController {
         startColorSampleButton.rx.tap
             .asDriver()
             .drive(onNext: { _ in
-            self.startColorTextField.becomeFirstResponder()
-        })
+                self.startColorTextField.becomeFirstResponder()
+            })
+            .disposed(by: bag)
+        
         
         endColorSampleButton.rx.tap
             .asDriver()
             .drive(onNext: { _ in
                 self.endColorTextField.becomeFirstResponder()
             })
+            .disposed(by: bag)
     }
     
+    
+    private func bindSwitches() {
+        showMarkersSwitch.rx.isOn
+            .asDriver(onErrorJustReturn: false)
+            .drive(onNext: { show in
+                self.startMarker.isHidden = !show
+                self.endMarker.isHidden = !show
+                self.arrowLayer.isHidden = !show
+            })
+            .disposed(by: bag)
+    }
     
     private func adjustStartMarkerPosition(with gradientStart: CGPoint) {
         startMarkerXConstraint.constant = gradientView.bounds.width * gradientStart.x

@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wOP-xH-mqH" userLabel="Content View">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="2" width="375" height="665"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86N-U4-dNE" customClass="GradientView" customModule="GradientViewer" customModuleProvider="target">
                                         <rect key="frame" x="20" y="20" width="335" height="335"/>
@@ -66,11 +66,25 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="T9s-8g-shK">
-                                        <rect key="frame" x="10" y="418" width="355" height="209"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="T9s-8g-shK">
+                                        <rect key="frame" x="10" y="395" width="355" height="250"/>
                                         <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="rK4-Pd-vN4">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="31"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show start and end points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ze-SH-JUZ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="285" height="31"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mIv-Vu-LU1">
+                                                        <rect key="frame" x="285" y="0.0" width="72" height="31"/>
+                                                    </switch>
+                                                </subviews>
+                                            </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="EKr-IQ-R44">
-                                                <rect key="frame" x="0.0" y="0.0" width="355" height="89.5"/>
+                                                <rect key="frame" x="0.0" y="51" width="355" height="89.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start point" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kc7-KS-MJ7">
                                                         <rect key="frame" x="0.0" y="0.0" width="88" height="20.5"/>
@@ -145,7 +159,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="HwR-LM-6dS">
-                                                <rect key="frame" x="0.0" y="119.5" width="355" height="89.5"/>
+                                                <rect key="frame" x="0.0" y="160.5" width="355" height="89.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End point" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dn-Vy-GqN">
                                                         <rect key="frame" x="0.0" y="0.0" width="77.5" height="20.5"/>
@@ -233,7 +247,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wOP-xH-mqH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" priority="250" id="D7x-5V-Bqh"/>
+                            <constraint firstItem="wOP-xH-mqH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" priority="749" id="D7x-5V-Bqh"/>
                             <constraint firstItem="wOP-xH-mqH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Fhn-vx-3mt"/>
                             <constraint firstItem="wOP-xH-mqH" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="JRc-2o-IjQ"/>
                             <constraint firstAttribute="trailing" secondItem="wOP-xH-mqH" secondAttribute="trailing" id="y4J-UN-wbs"/>
@@ -252,6 +266,7 @@
                         <outlet property="endYLabel" destination="w8R-zA-g2p" id="Ngh-st-Jgy"/>
                         <outlet property="endYStepper" destination="wb3-r4-xSP" id="yiM-pb-2ow"/>
                         <outlet property="gradientView" destination="86N-U4-dNE" id="c4H-Bv-jc7"/>
+                        <outlet property="showMarkersSwitch" destination="mIv-Vu-LU1" id="nZS-hU-cM9"/>
                         <outlet property="startColorSampleButton" destination="kVH-kG-M9V" id="nkH-6Q-rfM"/>
                         <outlet property="startColorTextField" destination="yhf-e2-CaI" id="Dz8-VT-vKd"/>
                         <outlet property="startMarker" destination="Lgn-cp-xld" id="Rff-un-YSz"/>
