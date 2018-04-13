@@ -66,8 +66,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="T9s-8g-shK">
-                                        <rect key="frame" x="10" y="428" width="355" height="199"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="T9s-8g-shK">
+                                        <rect key="frame" x="10" y="418" width="355" height="209"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="EKr-IQ-R44">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="89.5"/>
@@ -96,15 +96,18 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftX-DM-p1d">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVH-kG-M9V">
                                                                 <rect key="frame" x="240" y="0.0" width="80" height="30"/>
                                                                 <color key="backgroundColor" red="0.08235294118" green="0.48627450979999998" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="30" id="HCq-vm-d2u"/>
-                                                                    <constraint firstAttribute="width" constant="80" id="mgF-ug-Uxh"/>
+                                                                    <constraint firstAttribute="width" constant="80" id="Vxc-F6-pFg"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="aVN-vZ-8eG"/>
                                                                 </constraints>
-                                                            </view>
+                                                            </button>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="PAQ-RM-RTq"/>
+                                                        </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="jZ8-Pp-8nn">
                                                         <rect key="frame" x="0.0" y="60.5" width="342" height="29"/>
@@ -142,7 +145,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="HwR-LM-6dS">
-                                                <rect key="frame" x="0.0" y="109.5" width="355" height="89.5"/>
+                                                <rect key="frame" x="0.0" y="119.5" width="355" height="89.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End point" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dn-Vy-GqN">
                                                         <rect key="frame" x="0.0" y="0.0" width="77.5" height="20.5"/>
@@ -168,14 +171,14 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yC9-iC-Os5">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQy-SC-xvw">
                                                                 <rect key="frame" x="240" y="0.0" width="80" height="30"/>
                                                                 <color key="backgroundColor" red="0.20392156859999999" green="0.75294117650000003" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="80" id="VNV-pI-uuu"/>
-                                                                    <constraint firstAttribute="height" constant="30" id="lvk-3k-pB7"/>
+                                                                    <constraint firstAttribute="width" constant="80" id="2ch-kQ-hg0"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="sLG-zv-GdK"/>
                                                                 </constraints>
-                                                            </view>
+                                                            </button>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="fni-y9-eg6">
@@ -224,7 +227,7 @@
                                     <constraint firstAttribute="trailing" secondItem="T9s-8g-shK" secondAttribute="trailing" constant="10" id="a6v-W0-e5h"/>
                                     <constraint firstAttribute="bottom" secondItem="T9s-8g-shK" secondAttribute="bottom" constant="20" id="da1-4w-zAG"/>
                                     <constraint firstItem="86N-U4-dNE" firstAttribute="top" secondItem="wOP-xH-mqH" secondAttribute="top" constant="20" id="jRM-8o-mV7"/>
-                                    <constraint firstItem="T9s-8g-shK" firstAttribute="top" relation="greaterThanOrEqual" secondItem="86N-U4-dNE" secondAttribute="bottom" constant="30" id="pos-yX-Cd5"/>
+                                    <constraint firstItem="T9s-8g-shK" firstAttribute="top" relation="greaterThanOrEqual" secondItem="86N-U4-dNE" secondAttribute="bottom" constant="40" id="pos-yX-Cd5"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -239,7 +242,7 @@
                     </view>
                     <connections>
                         <outlet property="containerBottomConstraint" destination="JRc-2o-IjQ" id="WLc-Gs-5dE"/>
-                        <outlet property="endColorSampleView" destination="yC9-iC-Os5" id="LwA-m3-QcU"/>
+                        <outlet property="endColorSampleButton" destination="lQy-SC-xvw" id="zho-vr-UIa"/>
                         <outlet property="endColorTextField" destination="aBR-BQ-qNV" id="Rvk-HJ-6iA"/>
                         <outlet property="endMarker" destination="Mfb-uW-xxB" id="xGf-TU-sdb"/>
                         <outlet property="endMarkerXConstraint" destination="JN0-HF-Awt" id="RSb-eG-b2m"/>
@@ -249,7 +252,7 @@
                         <outlet property="endYLabel" destination="w8R-zA-g2p" id="Ngh-st-Jgy"/>
                         <outlet property="endYStepper" destination="wb3-r4-xSP" id="yiM-pb-2ow"/>
                         <outlet property="gradientView" destination="86N-U4-dNE" id="c4H-Bv-jc7"/>
-                        <outlet property="startColorSampleView" destination="ftX-DM-p1d" id="Zno-oy-Adh"/>
+                        <outlet property="startColorSampleButton" destination="kVH-kG-M9V" id="nkH-6Q-rfM"/>
                         <outlet property="startColorTextField" destination="yhf-e2-CaI" id="Dz8-VT-vKd"/>
                         <outlet property="startMarker" destination="Lgn-cp-xld" id="Rff-un-YSz"/>
                         <outlet property="startMarkerXConstraint" destination="zdQ-fW-Vpb" id="XFp-IN-QP8"/>

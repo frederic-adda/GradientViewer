@@ -94,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				B69C6C772080EBD000DB5CD3 /* KeyboardHandler.swift */,
+				B69C6C792080EBEE00DB5CD3 /* InputViewController.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -121,7 +122,6 @@
 			children = (
 				B6C277F7207DC41600A742FE /* Main.storyboard */,
 				B6C277F5207DC41600A742FE /* GradientViewController.swift */,
-				B69C6C792080EBEE00DB5CD3 /* InputViewController.swift */,
 				B69C6C752080EB8700DB5CD3 /* Gradients */,
 				B69C6C762080EBA900DB5CD3 /* Protocols */,
 				B69C6C742080EB6900DB5CD3 /* Extensions */,
@@ -436,7 +436,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fr.novaera.GradientViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -455,7 +455,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fr.novaera.GradientViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

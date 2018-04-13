@@ -36,9 +36,9 @@ class GradientViewController: InputViewController {
     @IBOutlet private weak var endYStepper: UIStepper!
     
     @IBOutlet private weak var startColorTextField: UITextField!
-    @IBOutlet private weak var startColorSampleView: UIView!
+    @IBOutlet private weak var startColorSampleButton: UIButton!
     @IBOutlet private weak var endColorTextField: UITextField!
-    @IBOutlet private weak var endColorSampleView: UIView!
+    @IBOutlet private weak var endColorSampleButton: UIButton!
     
     @IBOutlet private weak var startMarker: UILabel!
     @IBOutlet private weak var endMarker: UILabel!
@@ -140,7 +140,7 @@ class GradientViewController: InputViewController {
             .map { UIColor(hexString: $0) }
             .subscribe(onNext: { (color) in
                 self.gradientView.startColor = color
-                self.startColorSampleView.backgroundColor = color
+                self.startColorSampleButton.backgroundColor = color
             })
             .disposed(by: bag)
         
@@ -149,9 +149,21 @@ class GradientViewController: InputViewController {
             .map { UIColor(hexString: $0) }
             .subscribe(onNext: { (color) in
                 self.gradientView.endColor = color
-                self.endColorSampleView.backgroundColor = color
+                self.endColorSampleButton.backgroundColor = color
             })
             .disposed(by: bag)
+        
+        startColorSampleButton.rx.tap
+            .asDriver()
+            .drive(onNext: { _ in
+            self.startColorTextField.becomeFirstResponder()
+        })
+        
+        endColorSampleButton.rx.tap
+            .asDriver()
+            .drive(onNext: { _ in
+                self.endColorTextField.becomeFirstResponder()
+            })
     }
     
     
