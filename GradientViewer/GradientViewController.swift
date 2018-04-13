@@ -43,7 +43,6 @@ class GradientViewController: InputViewController {
     @IBOutlet private weak var startMarker: UILabel!
     @IBOutlet private weak var endMarker: UILabel!
     
-    @IBOutlet private weak var showMarkersSwitch: UISwitch!
     
     // NSLayoutConstraints
     @IBOutlet private weak var startMarkerXConstraint: NSLayoutConstraint!
@@ -61,7 +60,6 @@ class GradientViewController: InputViewController {
         bindGradientModel()
         bindSteppers()
         bindTextFields()
-        bindSwitches()
     }
     
     
@@ -173,17 +171,6 @@ class GradientViewController: InputViewController {
     }
     
     
-    private func bindSwitches() {
-        showMarkersSwitch.rx.isOn
-            .asDriver(onErrorJustReturn: false)
-            .drive(onNext: { show in
-                self.startMarker.isHidden = !show
-                self.endMarker.isHidden = !show
-                self.arrowLayer.isHidden = !show
-            })
-            .disposed(by: bag)
-    }
-    
     private func adjustStartMarkerPosition(with gradientStart: CGPoint) {
         startMarkerXConstraint.constant = gradientView.bounds.width * gradientStart.x
         startMarkerYConstraint.constant = gradientView.bounds.height * gradientStart.y
@@ -215,6 +202,13 @@ class GradientViewController: InputViewController {
         arrowLayer.strokeColor = UIColor.darkGray.cgColor
         
         self.gradientView.layer.insertSublayer(arrowLayer, below: startMarker.layer)
+    }
+    
+    
+    @IBAction func tappedView(_ sender: UITapGestureRecognizer) {
+        startMarker.isHidden = !startMarker.isHidden
+        endMarker.isHidden = !endMarker.isHidden
+        arrowLayer.isHidden = !arrowLayer.isHidden
     }
 }
 
