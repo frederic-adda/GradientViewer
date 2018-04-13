@@ -10,13 +10,16 @@
 		91A1E7ED7BFCDD578192E40C /* Pods_GradientViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E4B3DEE781977E73F5A9AE3 /* Pods_GradientViewer.framework */; };
 		B636DB082080A26900C69C9B /* UIView extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B636DB072080A26900C69C9B /* UIView extension.swift */; };
 		B65B9EB6207EA96E0045987C /* UIColor extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65B9EB5207EA96E0045987C /* UIColor extension.swift */; };
+		B69C6C782080EBD100DB5CD3 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69C6C772080EBD000DB5CD3 /* KeyboardHandler.swift */; };
+		B69C6C7A2080EBEE00DB5CD3 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69C6C792080EBEE00DB5CD3 /* InputViewController.swift */; };
 		B6C277F4207DC41600A742FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C277F3207DC41600A742FE /* AppDelegate.swift */; };
-		B6C277F6207DC41600A742FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C277F5207DC41600A742FE /* ViewController.swift */; };
+		B6C277F6207DC41600A742FE /* GradientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C277F5207DC41600A742FE /* GradientViewController.swift */; };
 		B6C277F9207DC41600A742FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6C277F7207DC41600A742FE /* Main.storyboard */; };
 		B6C277FB207DC41900A742FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6C277FA207DC41900A742FE /* Assets.xcassets */; };
 		B6C277FE207DC41900A742FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6C277FC207DC41900A742FE /* LaunchScreen.storyboard */; };
 		B6C27807207DC47800A742FE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C27805207DC47700A742FE /* GradientView.swift */; };
 		B6C27808207DC47800A742FE /* CAGradientLayer extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C27806207DC47700A742FE /* CAGradientLayer extension.swift */; };
+		B6E7708B2080E75000E96942 /* UIBezierPath extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E7708A2080E75000E96942 /* UIBezierPath extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,15 +27,18 @@
 		90309BC965EEED3BB905A714 /* Pods-GradientViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradientViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GradientViewer/Pods-GradientViewer.debug.xcconfig"; sourceTree = "<group>"; };
 		B636DB072080A26900C69C9B /* UIView extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView extension.swift"; sourceTree = "<group>"; };
 		B65B9EB5207EA96E0045987C /* UIColor extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor extension.swift"; sourceTree = "<group>"; };
+		B69C6C772080EBD000DB5CD3 /* KeyboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
+		B69C6C792080EBEE00DB5CD3 /* InputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		B6C277F0207DC41600A742FE /* GradientViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GradientViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6C277F3207DC41600A742FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B6C277F5207DC41600A742FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B6C277F5207DC41600A742FE /* GradientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientViewController.swift; sourceTree = "<group>"; };
 		B6C277F8207DC41600A742FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B6C277FA207DC41900A742FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6C277FD207DC41900A742FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B6C277FF207DC41900A742FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6C27805207DC47700A742FE /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		B6C27806207DC47700A742FE /* CAGradientLayer extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer extension.swift"; sourceTree = "<group>"; };
+		B6E7708A2080E75000E96942 /* UIBezierPath extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBezierPath extension.swift"; sourceTree = "<group>"; };
 		EBB5EF3CE0F54846B6F0983D /* Pods-GradientViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradientViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-GradientViewer/Pods-GradientViewer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,13 +71,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B65B9EB7207EAEC80045987C /* Extensions */ = {
+		B69C6C742080EB6900DB5CD3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				B65B9EB5207EA96E0045987C /* UIColor extension.swift */,
 				B636DB072080A26900C69C9B /* UIView extension.swift */,
+				B6E7708A2080E75000E96942 /* UIBezierPath extension.swift */,
 			);
-			name = Extensions;
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B69C6C752080EB8700DB5CD3 /* Gradients */ = {
+			isa = PBXGroup;
+			children = (
+				B6C27806207DC47700A742FE /* CAGradientLayer extension.swift */,
+				B6C27805207DC47700A742FE /* GradientView.swift */,
+			);
+			path = Gradients;
+			sourceTree = "<group>";
+		};
+		B69C6C762080EBA900DB5CD3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B69C6C772080EBD000DB5CD3 /* KeyboardHandler.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		B6C277E7207DC41600A742FE = {
@@ -96,9 +120,11 @@
 			isa = PBXGroup;
 			children = (
 				B6C277F7207DC41600A742FE /* Main.storyboard */,
-				B6C277F5207DC41600A742FE /* ViewController.swift */,
-				B65B9EB7207EAEC80045987C /* Extensions */,
-				B6C2780A207DE76C00A742FE /* Gradients */,
+				B6C277F5207DC41600A742FE /* GradientViewController.swift */,
+				B69C6C792080EBEE00DB5CD3 /* InputViewController.swift */,
+				B69C6C752080EB8700DB5CD3 /* Gradients */,
+				B69C6C762080EBA900DB5CD3 /* Protocols */,
+				B69C6C742080EB6900DB5CD3 /* Extensions */,
 				B6C27809207DE75F00A742FE /* Supporting files */,
 			);
 			path = GradientViewer;
@@ -113,15 +139,6 @@
 				B6C277FF207DC41900A742FE /* Info.plist */,
 			);
 			name = "Supporting files";
-			sourceTree = "<group>";
-		};
-		B6C2780A207DE76C00A742FE /* Gradients */ = {
-			isa = PBXGroup;
-			children = (
-				B6C27806207DC47700A742FE /* CAGradientLayer extension.swift */,
-				B6C27805207DC47700A742FE /* GradientView.swift */,
-			);
-			name = Gradients;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,12 +273,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B69C6C7A2080EBEE00DB5CD3 /* InputViewController.swift in Sources */,
 				B65B9EB6207EA96E0045987C /* UIColor extension.swift in Sources */,
-				B6C277F6207DC41600A742FE /* ViewController.swift in Sources */,
+				B6C277F6207DC41600A742FE /* GradientViewController.swift in Sources */,
 				B6C277F4207DC41600A742FE /* AppDelegate.swift in Sources */,
 				B636DB082080A26900C69C9B /* UIView extension.swift in Sources */,
 				B6C27808207DC47800A742FE /* CAGradientLayer extension.swift in Sources */,
 				B6C27807207DC47800A742FE /* GradientView.swift in Sources */,
+				B6E7708B2080E75000E96942 /* UIBezierPath extension.swift in Sources */,
+				B69C6C782080EBD100DB5CD3 /* KeyboardHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

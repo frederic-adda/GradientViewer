@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  GradientViewController.swift
 //  GradientViewer
 //
 //  Created by Frédéric ADDA on 11/04/2018.
@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import RxSwiftExt
 
-class ViewController: UIViewController {
+class GradientViewController: InputViewController {
 
     // MARK: - Properties
     
@@ -173,7 +173,7 @@ class ViewController: UIViewController {
     }
     
     
-    // The gradient vector is an arrow going from the startMarker to the endMarker
+    // The gradient vector is a line going from the startMarker to the endMarker
     private func adjustGradientVector() {
         arrowLayer.removeFromSuperlayer()
         
