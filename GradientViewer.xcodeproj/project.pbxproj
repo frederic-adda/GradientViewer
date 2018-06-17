@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		91A1E7ED7BFCDD578192E40C /* Pods_GradientViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E4B3DEE781977E73F5A9AE3 /* Pods_GradientViewer.framework */; };
+		B61E978C20D655EF00B4F869 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E978B20D655EF00B4F869 /* Formatters.swift */; };
+		B61E978E20D656DB00B4F869 /* NumberFormatter extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E978D20D656DB00B4F869 /* NumberFormatter extension.swift */; };
 		B636DB082080A26900C69C9B /* UIView extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B636DB072080A26900C69C9B /* UIView extension.swift */; };
 		B65B9EB6207EA96E0045987C /* UIColor extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65B9EB5207EA96E0045987C /* UIColor extension.swift */; };
 		B69C6C782080EBD100DB5CD3 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69C6C772080EBD000DB5CD3 /* KeyboardHandler.swift */; };
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		8E4B3DEE781977E73F5A9AE3 /* Pods_GradientViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GradientViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90309BC965EEED3BB905A714 /* Pods-GradientViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradientViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GradientViewer/Pods-GradientViewer.debug.xcconfig"; sourceTree = "<group>"; };
+		B61E978B20D655EF00B4F869 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		B61E978D20D656DB00B4F869 /* NumberFormatter extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter extension.swift"; sourceTree = "<group>"; };
 		B636DB072080A26900C69C9B /* UIView extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView extension.swift"; sourceTree = "<group>"; };
 		B65B9EB5207EA96E0045987C /* UIColor extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor extension.swift"; sourceTree = "<group>"; };
 		B69C6C772080EBD000DB5CD3 /* KeyboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
@@ -77,6 +81,7 @@
 				B65B9EB5207EA96E0045987C /* UIColor extension.swift */,
 				B636DB072080A26900C69C9B /* UIView extension.swift */,
 				B6E7708A2080E75000E96942 /* UIBezierPath extension.swift */,
+				B61E978D20D656DB00B4F869 /* NumberFormatter extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 		B6C277F2207DC41600A742FE /* GradientViewer */ = {
 			isa = PBXGroup;
 			children = (
+				B61E978B20D655EF00B4F869 /* Formatters.swift */,
 				B6C277F7207DC41600A742FE /* Main.storyboard */,
 				B6C277F5207DC41600A742FE /* GradientViewController.swift */,
 				B69C6C752080EB8700DB5CD3 /* Gradients */,
@@ -281,6 +287,8 @@
 				B6C27808207DC47800A742FE /* CAGradientLayer extension.swift in Sources */,
 				B6C27807207DC47800A742FE /* GradientView.swift in Sources */,
 				B6E7708B2080E75000E96942 /* UIBezierPath extension.swift in Sources */,
+				B61E978C20D655EF00B4F869 /* Formatters.swift in Sources */,
+				B61E978E20D656DB00B4F869 /* NumberFormatter extension.swift in Sources */,
 				B69C6C782080EBD100DB5CD3 /* KeyboardHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

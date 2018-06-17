@@ -22,6 +22,7 @@ class GradientViewController: InputViewController {
     // Private properties
     private var bag = DisposeBag()
     private var arrowLayer = CAShapeLayer()
+    private let doubleFormatter = Formatters.shared.doubleFormatter
     
     // IBOutlets
     @IBOutlet private weak var gradientView: GradientView!
@@ -77,8 +78,8 @@ class GradientViewController: InputViewController {
         gradientStart.asObservable()
             .subscribe(onNext: { (gradientStart) in
                 self.gradientView.startPoint = gradientStart
-                self.startXLabel.text = "x: \(gradientStart.x)"
-                self.startYLabel.text = "y: \(gradientStart.y)"
+                self.startXLabel.text = "x: \(self.doubleFormatter.string(from: gradientStart.x))"
+                self.startYLabel.text = "y: \(self.doubleFormatter.string(from: gradientStart.y))"
                 self.startXStepper.value = Double(gradientStart.x)
                 self.startYStepper.value = Double(gradientStart.y)
                 
@@ -89,8 +90,8 @@ class GradientViewController: InputViewController {
         gradientEnd.asObservable()
             .subscribe(onNext: { (gradientEnd) in
                 self.gradientView.endPoint = gradientEnd
-                self.endXLabel.text = "x: \(gradientEnd.x)"
-                self.endYLabel.text = "y: \(gradientEnd.y)"
+                self.endXLabel.text = "x: \(self.doubleFormatter.string(from: gradientEnd.x))"
+                self.endYLabel.text = "y: \(self.doubleFormatter.string(from: gradientEnd.y))"
                 self.endXStepper.value = Double(gradientEnd.x)
                 self.endYStepper.value = Double(gradientEnd.y)
                 
