@@ -77,11 +77,19 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iT1-5v-Xy2" userLabel="Start Touch View">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="FI9-cc-QuJ" appends="YES" id="lwe-hE-hp1"/>
+                                                </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="55K-hs-ha5" userLabel="End Touch View">
                                                 <rect key="frame" x="0.0" y="335" width="40" height="40"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
                                                 <viewLayoutGuide key="safeArea" id="N3C-Fn-9PD"/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="Mv4-aJ-9zH" appends="YES" id="qR5-Dz-xvY"/>
+                                                </connections>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -305,6 +313,16 @@
                         <action selector="tappedView:" destination="BYZ-38-t0r" id="lUN-2x-xZm"/>
                     </connections>
                 </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="FI9-cc-QuJ" userLabel="Start Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="panStartMarkerPositionWithSender:" destination="BYZ-38-t0r" id="Etw-ov-zAu"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Mv4-aJ-9zH" userLabel="End Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="panEndMarkerPositionWithSender:" destination="BYZ-38-t0r" id="Nxx-fV-zjR"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>

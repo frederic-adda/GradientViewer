@@ -64,9 +64,6 @@ class GradientViewController: InputViewController {
         bindGradientModel()
         bindSteppers()
         bindTextFields()
-
-        // Pan gestures
-        addPanGestures()
     }
     
     
@@ -215,7 +212,7 @@ class GradientViewController: InputViewController {
     
 
 
-    // MARK: -  Custom functions
+    // MARK: -  Actions
     @IBAction func tappedView(_ sender: UITapGestureRecognizer) {
         startMarker.isHidden = !startMarker.isHidden
         endMarker.isHidden = !endMarker.isHidden
@@ -225,20 +222,13 @@ class GradientViewController: InputViewController {
     }
 
 
-    private func addPanGestures() {
-        let startPanGesture = UIPanGestureRecognizer(target: self, action: #selector(panStartMarkerPosition(sender:)))
-        startTouchView.addGestureRecognizer(startPanGesture)
-        let endPanGesture = UIPanGestureRecognizer(target: self, action: #selector(panEndMarkerPosition(sender:)))
-        endTouchView.addGestureRecognizer(endPanGesture)
-    }
-
-    @objc private func panStartMarkerPosition(sender: UIPanGestureRecognizer) {
+    @IBAction private func panStartMarkerPosition(sender: UIPanGestureRecognizer) {
         let pan = sender.translation(in: gradientView)
         adjustGradientPoint(gradientStart, with: pan)
         sender.setTranslation(CGPoint.zero, in: gradientView)
     }
 
-    @objc private func panEndMarkerPosition(sender: UIPanGestureRecognizer) {
+    @IBAction private func panEndMarkerPosition(sender: UIPanGestureRecognizer) {
         let pan = sender.translation(in: gradientView)
         adjustGradientPoint(gradientEnd, with: pan)
         sender.setTranslation(CGPoint.zero, in: gradientView)
