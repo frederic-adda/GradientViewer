@@ -43,7 +43,10 @@ class GradientViewController: InputViewController {
     
     @IBOutlet private weak var startMarker: UILabel!
     @IBOutlet private weak var endMarker: UILabel!
-    
+
+    @IBOutlet private weak var startTouchView: UIView!
+    @IBOutlet private weak var endTouchView: UIView!
+
     
     // NSLayoutConstraints
     @IBOutlet private weak var startMarkerXConstraint: NSLayoutConstraint!
@@ -61,6 +64,9 @@ class GradientViewController: InputViewController {
         bindGradientModel()
         bindSteppers()
         bindTextFields()
+
+        // Pan gestures
+        addPanGestures()
     }
     
     
@@ -171,7 +177,9 @@ class GradientViewController: InputViewController {
             .disposed(by: bag)
     }
     
-    
+
+
+    // MARK: -  Graphical adjustment functions
     private func adjustStartMarkerPosition(with gradientStart: CGPoint) {
         startMarkerXConstraint.constant = gradientView.bounds.width * gradientStart.x
         startMarkerYConstraint.constant = gradientView.bounds.height * gradientStart.y
@@ -205,11 +213,40 @@ class GradientViewController: InputViewController {
         self.gradientView.layer.insertSublayer(arrowLayer, below: startMarker.layer)
     }
     
-    
+
+
+    // MARK: -  Custom functions
     @IBAction func tappedView(_ sender: UITapGestureRecognizer) {
         startMarker.isHidden = !startMarker.isHidden
         endMarker.isHidden = !endMarker.isHidden
+        startTouchView.isUserInteractionEnabled = !startTouchView.isUserInteractionEnabled
+        endTouchView.isUserInteractionEnabled = !endTouchView.isUserInteractionEnabled
         arrowLayer.isHidden = !arrowLayer.isHidden
+    }
+
+
+    private func addPanGestures() {
+        let startPanGesture = UIPanGestureRecognizer(target: self, action: #selector(panStartMarkerPosition(sender:)))
+        startTouchView.addGestureRecognizer(startPanGesture)
+        let endPanGesture = UIPanGestureRecognizer(target: self, action: #selector(panEndMarkerPosition(sender:)))
+        endTouchView.addGestureRecognizer(endPanGesture)
+    }
+
+    @objc private func panStartMarkerPosition(sender: UIPanGestureRecognizer) {
+        let pan = sender.translation(in: gradientView)
+        adjustGradientPoint(gradientStart, with: pan)
+        sender.setTranslation(CGPoint.zero, in: gradientView)
+    }
+
+    @objc private func panEndMarkerPosition(sender: UIPanGestureRecognizer) {
+        let pan = sender.translation(in: gradientView)
+        adjustGradientPoint(gradientEnd, with: pan)
+        sender.setTranslation(CGPoint.zero, in: gradientView)
+    }
+
+    private func adjustGradientPoint(_ gradientPoint: Variable<CGPoint>, with pan: CGPoint) {
+        gradientPoint.value.x = min(1, max(0, gradientPoint.value.x + pan.x / gradientView.bounds.width))
+        gradientPoint.value.y = min(1, max(0, gradientPoint.value.y + pan.y /  gradientView.bounds.height))
     }
 }
 
